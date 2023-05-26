@@ -1,0 +1,18 @@
+{
+    "node_name": "consul-edge",
+    "data_dir": "/consul/data",
+    "server": true,
+    "ui": true,
+    "addresses": {
+        "http": "0.0.0.0"
+    },
+    "acl": {
+        "enabled": true,
+        "default_policy": "deny",
+        "enable_token_persistence": true,
+        "tokens": {
+            "master": "ZXRyaXNtYXJ0ZmFybQo=",
+            "agent": "ZXRyaXNtYXJ0ZmFybQo="
+        }
+    }
+}

@@ -1,0 +1,50 @@
+version: '3.9'
+services:
+  mqtt-broker:
+    image: eclipse-mosquitto:1.6
+    hostname: mqtt-broker
+    container_name: mqtt-broker
+    restart: unless-stopped
+    networks:
+      - etri-net
+    ports:
+      - 1883:1883
+      - 9998:9001
+    volumes:
+      - ./config/mqtt:/mosquitto/config
+
+  consul:
+    command: agent -ui -bootstrap -server
+    container_name: consul-edge
+    hostname: consul-edge
+    image: consul:latest
+    ports:
+      - 9999:8500/tcp
+    read_only: true
+    restart: always
+    security_opt:
+      - no-new-privileges:true
+    user: root:root
+    volumes:
+      - ./config/consul/consul-edge.json:/consul/config/consul-edge.json
+      - ./volumes/consul/data:/consul/data
+
+  postgres:
+    image: postgres:latest
+    hostname: postgres
+    networks:
+      - etri-net
+    ports:
+      - 127.0.0.1:5432:5432/tcp
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    restart: unless-stopped
+    volumes:
+      - ./volumes/postgres/data-15:/var/lib/postgresql/data
+      - ./volumes/postgres/dump:/home
+      - /etc/localtime:/etc/localtime:ro
+
+networks:
+  etri-net: null
