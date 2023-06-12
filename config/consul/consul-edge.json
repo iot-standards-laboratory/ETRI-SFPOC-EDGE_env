@@ -11,8 +11,8 @@
         "default_policy": "deny",
         "enable_token_persistence": true,
         "tokens": {
-            "master": "ZXRyaXNtYXJ0ZmFybQo=",
-            "agent": "ZXRyaXNtYXJ0ZmFybQo="
+            "master": "62KY7J2YIOycoeuzgOOEsWwg7ZuE7J+dIOOEuOOFj+uKlOuCoAoK7Jyg7KaI66as7ZWYIOy5tOugjCBI7Lu1IOuvvOqwkOuwlOuUlCDshLHqsJDqsJzrsJwKCjMwME1BQU4tNzgwIOyXkHJvIOyduO2UjOujqOyWuOyE",
+            "agent": "62KY7J2YIOycoeuzgOOEsWwg7ZuE7J+dIOOEuOOFj+uKlOuCoAoK7Jyg7KaI66as7ZWYIOy5tOugjCBI7Lu1IOuvvOqwkOuwlOuUlCDshLHqsJDqsJzrsJwKCjMwME1BQU4tNzgwIOyXkHJvIOyduO2UjOujqOyWuOyE"
         }
     }
 }
