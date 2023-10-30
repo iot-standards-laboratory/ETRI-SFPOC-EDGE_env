@@ -17,7 +17,7 @@ services:
     command: agent -ui -bootstrap -server
     container_name: consul-edge
     hostname: consul-edge
-    image: consul:latest
+    image: hashicorp/consul:latest
     ports:
       - 9999:8500/tcp
     read_only: true
